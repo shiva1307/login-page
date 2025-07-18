@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .welcome-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .welcome-img {
+            width: 120px;
+            margin-bottom: 1.5rem;
+        }
+        .welcome-message {
+            font-size: 2rem;
+            color: #1976d2;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome-container">
+        <img src="welcome.jpg" alt="Hi" class="welcome-img">
+        <div class="welcome-message" id="welcome-message">Hi!</div>
+    </div>
+    <script>
+        // Get name from query string
+        const params = new URLSearchParams(window.location.search);
+        const name = params.get('name') || '';
+        if (name) {
+            document.getElementById('welcome-message').textContent = `Hi ${name}, this page is dedicated to Buddy sir`;
+        }
+    </script>
+</body>
+</html>
